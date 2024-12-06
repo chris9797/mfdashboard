@@ -6,8 +6,8 @@ st.set_page_config(page_title="Mutual Fund Dashboard",
                    page_icon=":bar_chart:",
                    layout="centered")
 
-with open("style.css") as css:
-    st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
+#with open("style.css") as css:
+#    st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
 
 df = pd.read_excel('quad_data.xlsx')
 
