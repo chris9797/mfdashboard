@@ -71,9 +71,9 @@ scatter_pl.update_layout(
     yaxis=dict(title='Price Change %', range=[-my, my], zeroline=True, zerolinecolor='white'),
     shapes=[
         # Vertical line
-        dict(type='line', x0=0, y0=-my, x1=0, y1=my, line=dict(color='black', width=1, dash='dot')),
+        dict(type='line', x0=0, y0=-my*2, x1=0, y1=my*2, line=dict(color='black', width=1, dash='dot')),
         # Horizontal line
-        dict(type='line', x0=-mx, y0=0, x1=mx, y1=0, line=dict(color='black', width=1, dash='dot'))
+        dict(type='line', x0=-mx*2, y0=0, x1=mx*2, y1=0, line=dict(color='black', width=1, dash='dot'))
     ]
 )
 
