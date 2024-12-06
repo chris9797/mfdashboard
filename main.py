@@ -88,4 +88,4 @@ scatter_pl.update_traces(
 scatter_pl['layout']['yaxis'].update(autorange = True)
 scatter_pl['layout']['xaxis'].update(autorange = True)
 
-st.plotly_chart(scatter_pl)
+st.plotly_chart(scatter_pl, use_container_width=True)
