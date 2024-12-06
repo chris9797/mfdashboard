@@ -54,8 +54,7 @@ scatter_pl = px.scatter(
     x='qty_change',
     y='price_change',
     title='Price vs Quantity Change %',
-    text='Stocks',
-    marker=dict(color='rgb(277,95,19)',size=12)
+    text='Stocks'
 )
 
 # Define the midpoints for the quadrants
@@ -80,7 +79,8 @@ scatter_pl.update_layout(
 
 scatter_pl.update_traces(
     textposition='middle right',  # Position text to the right of the points
-    textfont=dict(size=10, color='black')
+    textfont=dict(size=10, color='black'),
+    marker=dict(color='rgb(277,95,19)',size=12)
 )
 
 scatter_pl['layout']['yaxis'].update(autorange = True)
