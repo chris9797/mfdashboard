@@ -75,8 +75,8 @@ scatter_pl.update_layout(
         # Horizontal line
         dict(type='line', x0=-mx*2, y0=0, x1=mx*2, y1=0, line=dict(color='black', width=1, dash='dot'))
     ],
-    width="700",
-    height="500"
+    width=700,
+    height=500
 )
 
 scatter_pl.update_traces(
