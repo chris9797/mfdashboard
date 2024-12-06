@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import io
 
 st.set_page_config(page_title="Mutual Fund Dashboard",
                    page_icon=":bar_chart:",
