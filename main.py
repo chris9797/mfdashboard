@@ -89,7 +89,7 @@ scatter_pl.update_traces(
 scatter_pl['layout']['yaxis'].update(autorange = True)
 scatter_pl['layout']['xaxis'].update(autorange = True)
 
-"""buffer = io.BytesIO()
+buffer = io.BytesIO()
 
 # Save the Plotly figure as a high-resolution PNG to the buffer
 scatter_pl.write_image(buffer, format='png', scale=3)  # Higher scale for better resolution
@@ -101,25 +101,6 @@ st.download_button(
     data=buffer,
     file_name="plot.png",
     mime="image/png"
-)"""
+)
 
 st.plotly_chart(scatter_pl, use_container_width=True)
-
-if st.button("Download Matching View"):
-    # Use Plotly's `to_image()` method to get the current chart as displayed
-    import plotly.io as pio
-
-    buffer = io.BytesIO()
-
-    # Save the chart with its current state (viewport, zoom, etc.)
-    fig_bytes = pio.to_image(scatter_pl, format="png", scale=2)  # Adjust scale for better resolution
-    buffer.write(fig_bytes)
-    buffer.seek(0)
-
-    # Provide the download option
-    st.download_button(
-        label="Download Plot (Current View)",
-        data=buffer,
-        file_name="plot_current_view.png",
-        mime="image/png"
-    )
