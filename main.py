@@ -89,8 +89,6 @@ scatter_pl.update_traces(
 scatter_pl['layout']['yaxis'].update(autorange = True)
 scatter_pl['layout']['xaxis'].update(autorange = True)
 
-st.plotly_chart(scatter_pl, use_container_width=True)
-
 buffer = io.BytesIO()
 
 # Save the Plotly figure as a high-resolution PNG to the buffer
@@ -104,3 +102,7 @@ st.download_button(
     file_name="plot.png",
     mime="image/png"
 )
+
+st.plotly_chart(scatter_pl, use_container_width=True)
+
+
