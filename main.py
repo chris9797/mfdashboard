@@ -112,7 +112,7 @@ if st.button("Download Matching View"):
     buffer = io.BytesIO()
 
     # Save the chart with its current state (viewport, zoom, etc.)
-    fig_bytes = pio.to_image(fig, format="png", scale=2)  # Adjust scale for better resolution
+    fig_bytes = pio.to_image(scatter_pl, format="png", scale=2)  # Adjust scale for better resolution
     buffer.write(fig_bytes)
     buffer.seek(0)
 
