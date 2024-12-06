@@ -1,1 +1,1 @@
-pip install plotly-express
+!pip install plotly-express
