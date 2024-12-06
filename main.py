@@ -55,9 +55,7 @@ scatter_pl = px.scatter(
     y='price_change',
     title='Price vs Quantity Change %',
     text='Stocks',
-    marker=dict(
-    color='rgb(277,95,19)',
-    size=12))
+    marker=dict(color='rgb(277,95,19)',size=12)
 )
 
 # Define the midpoints for the quadrants
