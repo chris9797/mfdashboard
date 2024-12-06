@@ -89,16 +89,18 @@ scatter_pl.update_traces(
 scatter_pl['layout']['yaxis'].update(autorange = True)
 scatter_pl['layout']['xaxis'].update(autorange = True)
 
+st.plotly_chart(scatter_pl, use_container_width=True)
+
 buffer = io.BytesIO()
-scatter_pl.savefig(buffer, format='png', dpi=300)  # Use high DPI for sharp images
+
+# Save the Plotly figure as a high-resolution PNG to the buffer
+scatter_pl.write_image(buffer, format='png', scale=3)  # Higher scale for better resolution
 buffer.seek(0)
 
+# Add a download button to save the high-res image
 st.download_button(
     label="Download High-Resolution Plot",
     data=buffer,
     file_name="plot.png",
     mime="image/png"
 )
-
-
-st.plotly_chart(scatter_pl, use_container_width=True)
