@@ -82,4 +82,7 @@ scatter_pl.update_traces(
     textfont=dict(size=10, color='black')
 )
 
+scatter_pl['layout']['yaxis'].update(autorange = True)
+scatter_pl['layout']['xaxis'].update(autorange = True)
+
 st.plotly_chart(scatter_pl)
