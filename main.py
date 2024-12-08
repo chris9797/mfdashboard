@@ -57,7 +57,7 @@ fig, ax = plt.subplots(figsize=(8, 8))
 
 x = [z for z in df_selection['qty_change']]
 y = [z for z in df_selection['price_change']]
-labels = [z for z in df_selection['Stocks']]
+labels = [z for z in df_selection['Symbol']]
 
 # Scatter plot
 ax.scatter(x, y, color='#ff5f13', label='Data Points', s=100)
