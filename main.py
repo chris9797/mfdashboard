@@ -51,6 +51,8 @@ df_selection = df.query(
     "Stocks == @stocks or (Sector == @sectors and Indices == @indices)"
 )
 
+st.dataframe(df_selection)
+
 fig, ax = plt.subplots(figsize=(8, 8))
 
 x = [z for z in df_selection['qty_change']]
