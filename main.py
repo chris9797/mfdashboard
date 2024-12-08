@@ -7,7 +7,7 @@ st.set_page_config(page_title="Mutual Fund Dashboard",
                    page_icon=":bar_chart:",
                    layout="centered")
 
-df = pd.read_excel('quad_data.xlsx')
+df = pd.read_excel('quad_data-2.xlsx')
 
 st.sidebar.header("Filter:")
 
@@ -55,7 +55,7 @@ scatter_pl = px.scatter(
     x='qty_change',
     y='price_change',
     title='Price vs Quantity Change %',
-    text='Stocks'
+    text='Symbol'
 )
 
 # Define the midpoints for the quadrants
