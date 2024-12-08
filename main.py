@@ -2,6 +2,9 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 import io
+import matplotlib.pyplot as plt
+from adjustText import adjust_text
+
 
 st.set_page_config(page_title="Mutual Fund Dashboard",
                    page_icon=":bar_chart:",
@@ -48,57 +51,31 @@ df_selection = df.query(
     "Stocks == @stocks or (Sector == @sectors and Indices == @indices)"
 )
 
-st.dataframe(df_selection)
+fig, ax = plt.subplots(figsize=(8, 8))
 
-scatter_pl = px.scatter(
-    df_selection,
-    x='qty_change',
-    y='price_change',
-    title='Price vs Quantity Change %',
-    text='Symbol'
-)
+x = [z for z in df_selection['qty_change']]
+y = [z for z in df_selection['price_change']]
+labels = [z for z in df_selection['Stocks']]
 
-# Define the midpoints for the quadrants
-x_mid = 0
-y_mid = 0
+# Scatter plot
+ax.scatter(x, y, color='#ff5f13', label='Data Points', s=100)
 
-# Add quadrant lines
+# Add labels
 
-mx = max(abs(df_selection.qty_change.min()), abs(df_selection.qty_change.max()))
-my = max(abs(df_selection.price_change.min()), abs(df_selection.price_change.max()))
+texts = [ax.text(x[i], y[i], f' {label}', fontsize=10) for i, label in enumerate(labels)]
 
-scatter_pl.update_layout(
-    xaxis=dict(title='Quantity Change %', range=[-mx, mx], zeroline=True, zerolinecolor='white'),
-    yaxis=dict(title='Price Change %', range=[-my, my], zeroline=True, zerolinecolor='white'),
-    shapes=[
-        # Vertical line
-        dict(type='line', x0=0, y0=-my*2, x1=0, y1=my*2, line=dict(color='black', width=1, dash='dot')),
-        # Horizontal line
-        dict(type='line', x0=-mx*2, y0=11.4, x1=mx*2, y1=11.4, line=dict(color='black', width=1, dash='dot'))
-    ],
-)
 
-scatter_pl.update_traces(
-    textposition='middle right',  # Position text to the right of the points
-    textfont=dict(size=10, color='black'),
-    marker=dict(color='rgb(277,95,19)',size=12)
-)
+adjust_text(texts, arrowprops=dict(arrowstyle="->", color='#ff5f13'))
+# Add dotted quadrant lines
+ax.axhline(11.4, color='black', linestyle='--', linewidth=1)
+ax.axvline(0, color='black', linestyle='--', linewidth=1)
 
-scatter_pl['layout']['yaxis'].update(autorange = True)
-scatter_pl['layout']['xaxis'].update(autorange = True)
+# Customize axes and title
+ax.set_xlabel('Quantity Change %')
+ax.set_ylabel('Price Change %')
+ax.set_title('Price vs Quantity Change %')
 
-buffer = io.BytesIO()
+# Save the plot with specific DPI
+plt.savefig("scatter_plot.png")  # High-resolution output
 
-# Save the Plotly figure as a high-resolution PNG to the buffer
-scatter_pl.write_image(buffer, format='png', scale=3)  # Higher scale for better resolution
-buffer.seek(0)
-
-# Add a download button to save the high-res image
-st.download_button(
-    label="Download High-Resolution Plot",
-    data=buffer,
-    file_name="plot.png",
-    mime="image/png"
-)
-
-st.plotly_chart(scatter_pl, use_container_width=True)
+st.pyplot(fig)
