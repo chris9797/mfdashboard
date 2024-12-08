@@ -67,7 +67,7 @@ ax.scatter(x, y, color='#ff5f13', label='Data Points', s=100)
 texts = [ax.text(x[i], y[i], f' {label}', fontsize=10) for i, label in enumerate(labels)]
 
 
-adjust_text(texts, arrowprops=dict(arrowstyle="->", color='#ff5f13'))
+# adjust_text(texts, arrowprops=dict(arrowstyle="->", color='#ff5f13'))
 # Add dotted quadrant lines
 ax.axhline(11.4, color='black', linestyle='--', linewidth=1)
 ax.axvline(0, color='black', linestyle='--', linewidth=1)
