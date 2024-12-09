@@ -85,7 +85,7 @@ for indice in indices:
   if indice == "Nifty Midcap 150":
     nifmid = 1
 
-if nif == 1:
+if nif == 1 and nif100 == 0:
   ax.axhline(11, color='#ff5f13', linestyle='--', linewidth=1)
   ax.text(ax.get_xlim()[1] + 0.1, 10, f'Nifty')
 
