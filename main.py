@@ -110,6 +110,6 @@ ax.set_ylabel('Price Change %')
 ax.set_title('Price vs Quantity Change %')
 
 # Save the plot with specific DPI
-plt.savefig("scatter_plot.png")  # High-resolution output
+# plt.savefig("scatter_plot.png")  # High-resolution output
 
 st.pyplot(fig)
