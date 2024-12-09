@@ -80,7 +80,7 @@ nifmid = 0
 for indice in indices:
   if indice == "Nifty":
     nif = 1
-  if indice == "NiftyJr" and nif == 1:
+  if indice == "NiftyJr":
     nif100 = 1
   if indice == "Nifty Midcap 150":
     nifmid = 1
