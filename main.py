@@ -6,11 +6,13 @@ import matplotlib.pyplot as plt
 from adjustText import adjust_text
 import matplotlib
 from matplotlib import rcParams
+import matplotlib.font_manager as fm
 
+fm.fontManager.addfont("Mulish-SemiBold.ttf")
 
 matplotlib.rcParams.update(matplotlib.rcParamsDefault)
 
-rcParams['font.family'] = 'Mulish'  # Example: 'serif', 'sans-serif', 'monospace'
+rcParams['font.family'] = 'Mulish-SemiBold'  # Example: 'serif', 'sans-serif', 'monospace'
 rcParams['font.size'] = 12
 
 st.set_page_config(page_title="Mutual Fund Dashboard",
