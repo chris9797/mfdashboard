@@ -55,8 +55,8 @@ df_selection = df.query(
 st.dataframe(df_selection)
 
 fig, ax = plt.subplots(figsize=(8, 8))
-rc('font',**{'family':'serif','serif':['Times']})
-rc('text', usetex=True)
+csfont = {'fontname':'Comic Sans MS'}
+hfont = {'fontname':'Helvetica'}
 
 
 x = [z for z in df_selection['qty_change']]
@@ -74,7 +74,7 @@ ax.scatter(x, y, color='#ff5f13', label='Data Points', s=100)
 texts = [ax.text(x[i], y[i], f' {label}', fontsize=10) for i, label in enumerate(labels)]
 
 
-#adjust_text(texts, arrowprops=dict(arrowstyle="->", color='#ff5f13'))
+adjust_text(texts, arrowprops=dict(arrowstyle="->", color='#ff5f13'))
 # Add dotted quadrant lines
 
 nif = 0
@@ -105,11 +105,11 @@ ax.axvline(0, color='black', linestyle='--', linewidth=1)
 ax.axhline(0, color='black', linestyle='--', linewidth=1)
 
 # Customize axes and title
-ax.set_xlabel('Quantity Change %')
-ax.set_ylabel('Price Change %')
-ax.set_title('Price vs Quantity Change %')
+ax.set_xlabel('Quantity Change %', **hfont)
+ax.set_ylabel('Price Change %', **hfont)
+ax.set_title('Price vs Quantity Change %', **hfont)
 
 # Save the plot with specific DPI
-# plt.savefig("scatter_plot.png")  # High-resolution output
+plt.savefig("scatter_plot.png")  # High-resolution output
 
 st.pyplot(fig)
