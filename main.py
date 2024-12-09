@@ -91,7 +91,7 @@ ax.scatter(x, y, color=point_colors, label='Data Points', s=100)
 
 # Add labels
 
-texts = [ax.text(x[i], y[i], f' {label}', fontsize=10, ha='left', va='bottom') for i, label in enumerate(labels)]
+texts = [ax.text(x[i]+0.5, y[i]+0.5, f' {label}', fontsize=10, ha='left', va='bottom') for i, label in enumerate(labels)]
 
 # Add dotted quadrant lines
 
