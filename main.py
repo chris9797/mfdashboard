@@ -54,6 +54,8 @@ df_selection = df.query(
 st.dataframe(df_selection)
 
 fig, ax = plt.subplots(figsize=(8, 8))
+plt.rcParams["font.family"] = "cursive"
+
 
 x = [z for z in df_selection['qty_change']]
 y = [z for z in df_selection['price_change']]
