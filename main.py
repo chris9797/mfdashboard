@@ -10,7 +10,7 @@ from matplotlib import rcParams
 
 matplotlib.rcParams.update(matplotlib.rcParamsDefault)
 
-rcParams['font.family'] = 'serif'  # Example: 'serif', 'sans-serif', 'monospace'
+rcParams['font.family'] = 'Mulish'  # Example: 'serif', 'sans-serif', 'monospace'
 rcParams['font.size'] = 12
 
 
