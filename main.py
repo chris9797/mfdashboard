@@ -60,8 +60,8 @@ y = [z for z in df_selection['price_change']]
 labels = [z for z in df_selection['Symbol']]
 
 st.text(f"Selection:")
-st.text(f"Sectors: {sectors}")
-st.text(f"Indices: {indices}")
+st.text(f"Sectors: {", ".join(sectors)}")
+st.text(f"Indices: {", ".join(indices)}")
 # Scatter plot
 ax.scatter(x, y, color='#ff5f13', label='Data Points', s=100)
 
