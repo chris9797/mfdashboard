@@ -3,3 +3,4 @@ openpyxl
 kaleido
 matplotlib
 adjusttext
+texlive-latex-base
