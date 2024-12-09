@@ -7,7 +7,10 @@ from adjustText import adjust_text
 import matplotlib
 from matplotlib import rcParams
 import matplotlib.font_manager as fm
+import random
 
+
+colors = ["#D0CEBB", "#023D6D", "#4D1413", "#F4A980"]
 fm.fontManager.addfont("Mulish-VariableFont_wght.ttf")
 
 matplotlib.rcParams.update(matplotlib.rcParamsDefault)
@@ -68,13 +71,16 @@ hfont = {'fontname':'Helvetica'}
 
 x = [z for z in df_selection['qty_change']]
 y = [z for z in df_selection['price_change']]
+
+point_colors = [random.choice(colors) for _ in x]
+
 labels = [z for z in df_selection['Symbol']]
 
 st.text(f"Selection:")
 st.text(f"Sectors: {", ".join(sectors)}")
 st.text(f"Indices: {", ".join(indices)}")
 # Scatter plot
-ax.scatter(x, y, color='#ff5f13', label='Data Points', s=100)
+ax.scatter(x, y, color=point_colors, label='Data Points', s=100)
 
 # Add labels
 
