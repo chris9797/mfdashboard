@@ -4,7 +4,7 @@ import streamlit as st
 import io
 import matplotlib.pyplot as plt
 from adjustText import adjust_text
-
+matplotlib.rcParams.update(matplotlib.rcParamsDefault)
 
 st.set_page_config(page_title="Mutual Fund Dashboard",
                    page_icon=":bar_chart:",
@@ -54,6 +54,8 @@ df_selection = df.query(
 st.dataframe(df_selection)
 
 fig, ax = plt.subplots(figsize=(8, 8))
+csfont = {'fontname':'Comic Sans MS'}
+hfont = {'fontname':'Helvetica'}
 
 x = [z for z in df_selection['qty_change']]
 y = [z for z in df_selection['price_change']]
@@ -101,9 +103,9 @@ ax.axvline(0, color='black', linestyle='--', linewidth=1)
 ax.axhline(0, color='black', linestyle='--', linewidth=1)
 
 # Customize axes and title
-ax.set_xlabel('Quantity Change %')
-ax.set_ylabel('Price Change %')
-ax.set_title('Price vs Quantity Change %')
+ax.set_xlabel('Quantity Change %', **hfont)
+ax.set_ylabel('Price Change %', **hfont)
+ax.set_title('Price vs Quantity Change %', **hfont)
 
 # Save the plot with specific DPI
 plt.savefig("scatter_plot.png")  # High-resolution output
