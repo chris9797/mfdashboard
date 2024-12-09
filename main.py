@@ -93,8 +93,6 @@ ax.scatter(x, y, color=point_colors, label='Data Points', s=100)
 
 texts = [ax.text(x[i], y[i], f' {label}', fontsize=10) for i, label in enumerate(labels)]
 
-
-adjust_text(texts, arrowprops=dict(arrowstyle="->", color='#ff5f13'))
 # Add dotted quadrant lines
 
 nif = 0
@@ -128,8 +126,8 @@ ax.axhline(0, color='black', linestyle='--', linewidth=1)
 ax.set_xlabel('Quantity Change %')
 ax.set_ylabel('Price Change %')
 ax.set_title('Price vs Quantity Change %')
-
+adjust_text(texts, arrowprops=dict(arrowstyle="->", color='black'))
 # Save the plot with specific DPI
-plt.savefig("scatter_plot.png")  # High-resolution output
+#plt.savefig("scatter_plot.png")  # High-resolution output
 
 st.pyplot(fig)
