@@ -87,7 +87,7 @@ for indice in indices:
 
 if nif == 1:
   ax.axhline(11, color='#ff5f13', linestyle='--', linewidth=1)
-  ax.text(ax.get_xlim()[1] + 0.1, 11, f'Nifty')
+  ax.text(ax.get_xlim()[1] + 0.1, 10, f'Nifty')
 
 if nif100 == 1:
   ax.axhline(14.3, color='#ff5f13', linestyle='--', linewidth=1, label="Nifty 100")
