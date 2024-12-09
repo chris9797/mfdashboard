@@ -105,9 +105,9 @@ ax.axvline(0, color='black', linestyle='--', linewidth=1)
 ax.axhline(0, color='black', linestyle='--', linewidth=1)
 
 # Customize axes and title
-ax.set_xlabel('Quantity Change %', **hfont)
-ax.set_ylabel('Price Change %', **hfont)
-ax.set_title('Price vs Quantity Change %', **hfont)
+ax.set_xlabel('Quantity Change %')
+ax.set_ylabel('Price Change %')
+ax.set_title('Price vs Quantity Change %')
 
 # Save the plot with specific DPI
 plt.savefig("scatter_plot.png")  # High-resolution output
