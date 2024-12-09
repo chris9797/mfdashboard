@@ -59,6 +59,9 @@ x = [z for z in df_selection['qty_change']]
 y = [z for z in df_selection['price_change']]
 labels = [z for z in df_selection['Symbol']]
 
+st.text(f"Selection:")
+st.text(f"Sectors: {sectors}")
+st.text(f"Indices: {indices}")
 # Scatter plot
 ax.scatter(x, y, color='#ff5f13', label='Data Points', s=100)
 
@@ -69,6 +72,9 @@ texts = [ax.text(x[i], y[i], f' {label}', fontsize=10) for i, label in enumerate
 
 adjust_text(texts, arrowprops=dict(arrowstyle="->", color='#ff5f13'))
 # Add dotted quadrant lines
+
+
+
 ax.axhline(11.4, color='black', linestyle='--', linewidth=1)
 ax.axvline(0, color='black', linestyle='--', linewidth=1)
 
