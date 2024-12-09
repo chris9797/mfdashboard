@@ -7,10 +7,12 @@ from adjustText import adjust_text
 import matplotlib
 from matplotlib import rcParams
 
+
+matplotlib.rcParams.update(matplotlib.rcParamsDefault)
+
 rcParams['font.family'] = 'Mulish'  # Example: 'serif', 'sans-serif', 'monospace'
 rcParams['font.size'] = 12
 
-matplotlib.rcParams.update(matplotlib.rcParamsDefault)
 
 st.set_page_config(page_title="Mutual Fund Dashboard",
                    page_icon=":bar_chart:",
