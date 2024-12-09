@@ -90,10 +90,12 @@ if nif == 1:
   ax.text(ax.get_xlim()[1] + 0.1, 10, f'Nifty')
 
 if nif100 == 1:
-  ax.axhline(14.3, color='#ff5f13', linestyle='--', linewidth=1, label="Nifty 100")
+  ax.axhline(14.3, color='#ff5f13', linestyle='--', linewidth=1)
+  ax.text(ax.get_xlim()[1] + 0.1, 13.3, f'Nifty 100')
 
 if nifmid == 1:
-  ax.axhline(22.4, color='#ff5f13', linestyle='--', linewidth=1, label="Nifty Midcap 150")
+  ax.axhline(22.4, color='#ff5f13', linestyle='--', linewidth=1)
+  ax.text(ax.get_xlim()[1] + 0.1, 21.4, f'Nifty Midcap 150')
 
 ax.axvline(0, color='black', linestyle='--', linewidth=1)
 ax.axhline(0, color='black', linestyle='--', linewidth=1)
