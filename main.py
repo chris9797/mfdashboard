@@ -4,6 +4,8 @@ import streamlit as st
 import io
 import matplotlib.pyplot as plt
 from adjustText import adjust_text
+import matplotlib
+
 matplotlib.rcParams.update(matplotlib.rcParamsDefault)
 
 st.set_page_config(page_title="Mutual Fund Dashboard",
