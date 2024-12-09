@@ -4,7 +4,6 @@ import streamlit as st
 import io
 import matplotlib.pyplot as plt
 from adjustText import adjust_text
-# from matplotlib import rc
 
 
 st.set_page_config(page_title="Mutual Fund Dashboard",
@@ -55,9 +54,6 @@ df_selection = df.query(
 st.dataframe(df_selection)
 
 fig, ax = plt.subplots(figsize=(8, 8))
-csfont = {'fontname':'Comic Sans MS'}
-hfont = {'fontname':'Helvetica'}
-
 
 x = [z for z in df_selection['qty_change']]
 y = [z for z in df_selection['price_change']]
