@@ -7,7 +7,7 @@ from adjustText import adjust_text
 import matplotlib
 from matplotlib import rcParams
 
-rcParams['font.family'] = 'serif'  # Example: 'serif', 'sans-serif', 'monospace'
+rcParams['font.family'] = 'monospace'  # Example: 'serif', 'sans-serif', 'monospace'
 rcParams['font.size'] = 12
 
 matplotlib.rcParams.update(matplotlib.rcParamsDefault)
