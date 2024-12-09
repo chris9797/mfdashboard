@@ -72,8 +72,15 @@ hfont = {'fontname':'Helvetica'}
 x = [z for z in df_selection['qty_change']]
 y = [z for z in df_selection['price_change']]
 
-point_colors = [random.choice(colors) for _ in x]
-
+point_colors = []
+col = 0
+for _ in x:
+  try:
+    point_colors.append(colors[col])
+  except:
+    col = 0
+    point_colors.append(colors[col])
+  col += 1
 labels = [z for z in df_selection['Symbol']]
 
 st.text(f"Selection:")
