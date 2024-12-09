@@ -5,6 +5,10 @@ import io
 import matplotlib.pyplot as plt
 from adjustText import adjust_text
 import matplotlib
+from matplotlib import rcParams
+
+rcParams['font.family'] = 'serif'  # Example: 'serif', 'sans-serif', 'monospace'
+rcParams['font.size'] = 12
 
 matplotlib.rcParams.update(matplotlib.rcParamsDefault)
 
@@ -105,9 +109,9 @@ ax.axvline(0, color='black', linestyle='--', linewidth=1)
 ax.axhline(0, color='black', linestyle='--', linewidth=1)
 
 # Customize axes and title
-ax.set_xlabel('Quantity Change %', **csfont)
-ax.set_ylabel('Price Change %', **csfont)
-ax.set_title('Price vs Quantity Change %', **csfont)
+ax.set_xlabel('Quantity Change %')
+ax.set_ylabel('Price Change %')
+ax.set_title('Price vs Quantity Change %')
 
 # Save the plot with specific DPI
 plt.savefig("scatter_plot.png")  # High-resolution output
