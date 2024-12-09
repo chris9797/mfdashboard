@@ -8,7 +8,7 @@ import matplotlib
 from matplotlib import rcParams
 import matplotlib.font_manager as fm
 
-fm.fontManager.addfont("Mulish-SemiBold.ttf")
+fm.fontManager.addfont("Mulish-VariableFont_wght.ttf")
 
 matplotlib.rcParams.update(matplotlib.rcParamsDefault)
 
