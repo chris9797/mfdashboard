@@ -73,10 +73,29 @@ texts = [ax.text(x[i], y[i], f' {label}', fontsize=10) for i, label in enumerate
 adjust_text(texts, arrowprops=dict(arrowstyle="->", color='#ff5f13'))
 # Add dotted quadrant lines
 
+nif = 0
+nif100 = 0
+nifmid = 0
 
+for indice in indices:
+  if indice == "Nifty":
+    nif = 1
+  if indice == "NiftyJr" and nif == 1:
+    nif100 = 1
+  if indice == "Nifty Midcap 150":
+    nifmid = 1
 
-ax.axhline(11.4, color='black', linestyle='--', linewidth=1)
+if nif == 1:
+  ax.axhline(11, color='#ff5f13', linestyle='--', linewidth=1, label="Nifty")
+
+if nif100 == 1:
+  ax.axhline(14.3, color='#ff5f13', linestyle='--', linewidth=1, label="Nifty 100")
+
+if nifmid == 1:
+  ax.axhline(22.4, color='#ff5f13', linestyle='--', linewidth=1, label="Nifty Midcap 150")
+
 ax.axvline(0, color='black', linestyle='--', linewidth=1)
+ax.axhline(0, color='black', linestyle='--', linewidth=1)
 
 # Customize axes and title
 ax.set_xlabel('Quantity Change %')
