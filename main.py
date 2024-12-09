@@ -4,6 +4,7 @@ import streamlit as st
 import io
 import matplotlib.pyplot as plt
 from adjustText import adjust_text
+from matplotlib import rc
 
 
 st.set_page_config(page_title="Mutual Fund Dashboard",
@@ -54,7 +55,8 @@ df_selection = df.query(
 st.dataframe(df_selection)
 
 fig, ax = plt.subplots(figsize=(8, 8))
-plt.rcParams["font.family"] = "bold"
+rc('font',**{'family':'serif','serif':['Times']})
+rc('text', usetex=True)
 
 
 x = [z for z in df_selection['qty_change']]
