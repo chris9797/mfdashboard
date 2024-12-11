@@ -64,13 +64,28 @@ df_selection = df.query(
 )
 
 st.dataframe(df_selection)
+df_sec = pd.read_excel("Sectors.xlsx")
+df_sec['%p_chg'] = [round(((-v['Dec-23'] + v['Nov-24']) / v['Dec-23']) * 100, 2) for i, v in df_sec.iterrows()]
+
+df_plot = df_selection.group(['Sector']).sum()
+df_plot['%aum_chg'] = [round(((-v['V_Nov-23'] + v['V_Nov-24']) / v['V_Nov-23']) * 100, 2) for i, v in df_plot.iterrows()]
+
+df_plot.reset_index(inplace=True)
+aum = []
+for sec in df_plot['Sector']:
+  aum.append(df_sec[df_sec['Sectors'] == sec]['%p_chg'].iloc[0])
+df_plot['%p_chg'] = aum
+st.dataframe(df_plot)
+
+x = [z for z in df_plot['%aum_chg']]
+y = [z for z in df_plot['%p_chg']]
 
 fig, ax = plt.subplots(figsize=(8, 8))
 csfont = {'fontname':'Comic Sans MS'}
 hfont = {'fontname':'Helvetica'}
 
-x = [z for z in df_selection['qty_change']]
-y = [z for z in df_selection['price_change']]
+# x = [z for z in df_selection['qty_change']]
+# y = [z for z in df_selection['price_change']]
 
 point_colors = []
 col = 0
@@ -81,7 +96,7 @@ for _ in x:
     col = 0
     point_colors.append(colors[col])
   col += 1
-labels = [z for z in df_selection['Symbol']]
+labels = [z for z in df_plot['Sector']]
 
 st.text(f"Selection:")
 st.text(f"Sectors: {", ".join(sectors)}")
