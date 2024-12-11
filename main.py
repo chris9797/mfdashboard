@@ -143,7 +143,7 @@ ax.axhline(0, color='black', linestyle='--', linewidth=1)
 ax.set_xlabel('AUM Change %')
 ax.set_ylabel('Price Change %')
 ax.set_title('Price vs AUM Change %')
-adjust_text(texts, arrowprops=dict(arrowstyle="->", color='black'))
+# adjust_text(texts, arrowprops=dict(arrowstyle="->", color='black'))
 # Save the plot with specific DPI
 #plt.savefig("scatter_plot.png")  # High-resolution output
 
