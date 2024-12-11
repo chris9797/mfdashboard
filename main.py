@@ -14,6 +14,8 @@ colors = ["#D0CEBB", "#023D6D", "#4D1413", "#F4A980"]
 fm.fontManager.addfont("Mulish-Bold.ttf")
 
 matplotlib.rcParams.update(matplotlib.rcParamsDefault)
+matplotlib.rcParams['font.weight'] = 'bold'
+
 
 rcParams['font.family'] = 'Mulish'  # Example: 'serif', 'sans-serif', 'monospace'
 rcParams['font.size'] = 12
@@ -104,7 +106,7 @@ st.text(f"Selection:")
 st.text(f"Sectors: {", ".join(sectors)}")
 st.text(f"Indices: {", ".join(indices)}")
 # Scatter plot
-ax.scatter(x, y, color=point_colors, label='Data Points', s=100, fontweight='bold')
+ax.scatter(x, y, color=point_colors, label='Data Points', s=100)
 
 # Add labels
 
