@@ -104,7 +104,7 @@ st.text(f"Selection:")
 st.text(f"Sectors: {", ".join(sectors)}")
 st.text(f"Indices: {", ".join(indices)}")
 # Scatter plot
-ax.scatter(x, y, color=point_colors, label='Data Points', s=100, , fontweight='bold')
+ax.scatter(x, y, color=point_colors, label='Data Points', s=100, fontweight='bold')
 
 # Add labels
 
