@@ -32,9 +32,9 @@ st.sidebar.header("Filter:")
 
 df.reset_index(drop=True, inplace=True)
 
-df['price_change'] = round(((df['P_Nov-24'] - df['P_Nov-23'])/df['P_Nov-23']) * 100)
+#df['price_change'] = round(((df['P_Nov-24'] - df['P_Nov-23'])/df['P_Nov-23']) * 100)
 
-df['qty_change'] = round(((df['S_Nov-24'] - df['S_Nov-23'])/df['S_Nov-23']) * 100)
+#df['qty_change'] = round(((df['S_Nov-24'] - df['S_Nov-23'])/df['S_Nov-23']) * 100)
 
 df_sec = pd.read_excel("Sectors.xlsx")
 
