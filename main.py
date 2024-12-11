@@ -126,15 +126,15 @@ for indice in indices:
 
 if nif == 1 and nif100 == 0:
   ax.axhline(11, color='#ff5f13', linestyle='--', linewidth=1)
-  ax.text(ax.get_xlim()[1] + 1, 10.6, f'Nifty')
+  ax.text(ax.get_xlim()[1] + 1.2, 10.6, f'Nifty')
 
 if nif100 == 1:
   ax.axhline(14.3, color='#ff5f13', linestyle='--', linewidth=1)
-  ax.text(ax.get_xlim()[1] + 1, 13.9, f'Nifty 100')
+  ax.text(ax.get_xlim()[1] + 1.2, 13.9, f'Nifty 100')
 
 if nifmid == 1:
   ax.axhline(22.4, color='#ff5f13', linestyle='--', linewidth=1)
-  ax.text(ax.get_xlim()[1] + 1, 22.0, f'Nifty Midcap 150')
+  ax.text(ax.get_xlim()[1] + 1.2, 22.0, f'Nifty Midcap 150')
 
 ax.axvline(0, color='black', linestyle='--', linewidth=1)
 ax.axhline(0, color='black', linestyle='--', linewidth=1)
