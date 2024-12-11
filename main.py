@@ -68,7 +68,6 @@ df_sec = pd.read_excel("Sectors.xlsx")
 df_sec['%p_chg'] = [round(((-v['Dec-23'] + v['Nov-24']) / v['Dec-23']) * 100, 2) for i, v in df_sec.iterrows()]
 
 df_plot = df_selection.groupby(['Sector']).sum()
-st.dataframe(df_plot)
 df_plot['%aum_chg'] = [round(((-v['V_Nov-23'] + v['V_Nov-24']) / v['V_Nov-23']) * 100, 2) if v['V_Nov-23'] != 0 else 0 for i, v in df_plot.iterrows()]
 
 df_plot.reset_index(inplace=True)
@@ -76,7 +75,7 @@ aum = []
 for sec in df_plot['Sector']:
   aum.append(df_sec[df_sec['Sectors'] == sec]['%p_chg'].iloc[0])
 df_plot['%p_chg'] = aum
-st.dataframe(df_plot)
+st.dataframe(df_plot[['Sector', '%aum_chg', '%p_chg']])
 
 x = [z for z in df_plot['%aum_chg']]
 y = [z for z in df_plot['%p_chg']]
