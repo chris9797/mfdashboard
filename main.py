@@ -41,7 +41,7 @@ df_sec = pd.read_excel("Sectors.xlsx")
 stocks = st.sidebar.multiselect(
     "Select the stocks:",
     options=df['Stocks'].unique(),
-    default=df['Stocks'].unique()[0:5]
+    default=[]
 )
 
 sectors = st.sidebar.multiselect(
