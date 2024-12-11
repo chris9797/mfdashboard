@@ -130,7 +130,7 @@ if nif == 1 and nif100 == 0:
 
 if nif100 == 1:
   ax.axhline(14.3, color='#ff5f13', linestyle='--', linewidth=1)
-  ax.text(ax.get_xlim()[1] + 1.5, 13.9, f'Nifty 100')
+  ax.text(ax.get_xlim()[1] + 1.5, 13.9, f'Nifty 100', fontweight='bold')
 
 #if nifmid == 1:
   #ax.axhline(22.4, color='#ff5f13', linestyle='--', linewidth=1)
@@ -140,9 +140,9 @@ ax.axvline(0, color='black', linestyle='--', linewidth=1)
 ax.axhline(0, color='black', linestyle='--', linewidth=1)
 
 # Customize axes and title
-ax.set_xlabel('AUM Change %')
-ax.set_ylabel('Price Change %')
-ax.set_title('Price vs AUM Change %')
+ax.set_xlabel('AUM Change %', fontweight='bold')
+ax.set_ylabel('Price Change %', fontweight='bold')
+ax.set_title('Price vs AUM Change %', fontweight='bold')
 # adjust_text(texts, arrowprops=dict(arrowstyle="->", color='black'))
 # Save the plot with specific DPI
 #plt.savefig("scatter_plot.png")  # High-resolution output
