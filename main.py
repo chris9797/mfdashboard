@@ -47,13 +47,13 @@ stocks = st.sidebar.multiselect(
 sectors = st.sidebar.multiselect(
     "Select the sectors:",
     options=df_sec['Sectors'].unique(),
-    default=['Bank']
+    default=df_sec['Sectors'].unique()['Bank']
 )
 
 indices = st.sidebar.multiselect(
     "Select the indices:",
     options=df['Indices'].unique(),
-    default=['Nifty', 'NiftyJr']
+    default=['Nifty', 'NiftyJr', 'Nifty Midcap 150', 'Nifty Small Cap 250']]
 )
 
 st.title(":bar_chart: Mutual Fund Dashboard")
