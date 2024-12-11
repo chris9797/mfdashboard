@@ -67,7 +67,7 @@ st.dataframe(df_selection)
 df_sec = pd.read_excel("Sectors.xlsx")
 df_sec['%p_chg'] = [round(((-v['Dec-23'] + v['Nov-24']) / v['Dec-23']) * 100, 2) for i, v in df_sec.iterrows()]
 
-df_plot = df_selection.group(['Sector']).sum()
+df_plot = df_selection.groupby(['Sector']).sum()
 df_plot['%aum_chg'] = [round(((-v['V_Nov-23'] + v['V_Nov-24']) / v['V_Nov-23']) * 100, 2) for i, v in df_plot.iterrows()]
 
 df_plot.reset_index(inplace=True)
