@@ -26,9 +26,9 @@ df = pd.read_excel('quad_data-2.xlsx')
 
 st.sidebar.header("Filter:")
 
-df = df[df['P_Nov-24'] != 0].copy()
+#df = df[df['P_Nov-24'] != 0].copy()
 
-df = df[df['P_Nov-23'] != 0].copy()
+#df = df[df['P_Nov-23'] != 0].copy()
 
 df.reset_index(drop=True, inplace=True)
 
