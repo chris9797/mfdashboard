@@ -11,7 +11,7 @@ import random
 
 
 colors = ["#D0CEBB", "#023D6D", "#4D1413", "#F4A980"]
-fm.fontManager.addfont("Mulish-Black.ttf")
+fm.fontManager.addfont("Mulish-Bold.ttf")
 
 matplotlib.rcParams.update(matplotlib.rcParamsDefault)
 
