@@ -36,6 +36,8 @@ df['price_change'] = round(((df['P_Nov-24'] - df['P_Nov-23'])/df['P_Nov-23']) * 
 
 df['qty_change'] = round(((df['S_Nov-24'] - df['S_Nov-23'])/df['S_Nov-23']) * 100)
 
+df_sec = pd.read_excel("Sectors.xlsx")
+
 stocks = st.sidebar.multiselect(
     "Select the stocks:",
     options=df['Stocks'].unique(),
@@ -44,7 +46,7 @@ stocks = st.sidebar.multiselect(
 
 sectors = st.sidebar.multiselect(
     "Select the sectors:",
-    options=df['Sector'].unique(),
+    options=df_sec['Sectors'].unique(),
     default=['Bank']
 )
 
@@ -64,7 +66,7 @@ df_selection = df.query(
 )
 
 st.dataframe(df_selection)
-df_sec = pd.read_excel("Sectors.xlsx")
+
 df_sec['%p_chg'] = [round(((-v['Dec-23'] + v['Nov-24']) / v['Dec-23']) * 100, 2) for i, v in df_sec.iterrows()]
 
 df_plot = df_selection.groupby(['Sector']).sum()
