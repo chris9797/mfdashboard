@@ -98,7 +98,7 @@ for _ in x:
     col = 0
     point_colors.append(colors[col])
   col += 1
-labels = [z for z in df_plot['Sector']]
+labels = ['Technology' if z == 'IT' else z for z in df_plot['Sector']]
 
 st.text(f"Selection:")
 st.text(f"Sectors: {", ".join(sectors)}")
@@ -108,7 +108,7 @@ ax.scatter(x, y, color=point_colors, label='Data Points', s=100)
 
 # Add labels
 
-texts = [ax.text(x[i]+0.5, y[i]+0.5, f' {label}', fontsize=10, ha='left', va='bottom') for i, label in enumerate(labels)]
+texts = [ax.text(x[i]+0.5, y[i]+0.5, f' {label}', fontsize=10, ha='right', va='bottom') for i, label in enumerate(labels)]
 
 # Add dotted quadrant lines
 
