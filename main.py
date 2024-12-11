@@ -69,7 +69,7 @@ df_sec['%p_chg'] = [round(((-v['Dec-23'] + v['Nov-24']) / v['Dec-23']) * 100, 2)
 
 df_plot = df_selection.groupby(['Sector']).sum()
 st.dataframe(df_plot)
-df_plot['%aum_chg'] = [round(((-v['V_Nov-23'] + v['V_Nov-24']) / v['V_Nov-23']) * 100, 2) if v['V_Nov-23'] != 0 for i, v in df_plot.iterrows()]
+df_plot['%aum_chg'] = [round(((-v['V_Nov-23'] + v['V_Nov-24']) / v['V_Nov-23']) * 100, 2) if v['V_Nov-23'] != 0 else 0 for i, v in df_plot.iterrows()]
 
 df_plot.reset_index(inplace=True)
 aum = []
