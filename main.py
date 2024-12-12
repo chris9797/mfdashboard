@@ -145,7 +145,7 @@ ax.axhline(0, color='black', linestyle='--', linewidth=1)
 ax.set_xlabel('Quantity Change %', fontweight='bold')
 ax.set_ylabel('Price Change %', fontweight='bold')
 ax.set_title('Price vs Quantity Change %', fontweight='bold')
-# adjust_text(texts, arrowprops=dict(arrowstyle="->", color='black'))
+adjust_text(texts, arrowprops=dict(arrowstyle="->", color='black'))
 # Save the plot with specific DPI
 #plt.savefig("scatter_plot.png")  # High-resolution output
 
