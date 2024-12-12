@@ -100,7 +100,7 @@ for _ in x:
     col = 0
     point_colors.append(colors[col])
   col += 1
-labels = ['Technology' if z == 'IT' else z for z in df_selection['Sector']]
+labels = ['Technology' if z == 'IT' else z for z in df_selection['Symbol']]
 
 st.text(f"Selection:")
 st.text(f"Sectors: {", ".join(sectors)}")
@@ -144,7 +144,7 @@ ax.axhline(0, color='black', linestyle='--', linewidth=1)
 # Customize axes and title
 ax.set_xlabel('Quantity Change %', fontweight='bold')
 ax.set_ylabel('Price Change %', fontweight='bold')
-ax.set_title('Price vs AUM Change %', fontweight='bold')
+ax.set_title('Price vs Quantity Change %', fontweight='bold')
 # adjust_text(texts, arrowprops=dict(arrowstyle="->", color='black'))
 # Save the plot with specific DPI
 #plt.savefig("scatter_plot.png")  # High-resolution output
