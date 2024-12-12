@@ -49,13 +49,13 @@ stocks = st.sidebar.multiselect(
 sectors = st.sidebar.multiselect(
     "Select the sectors:",
     options=df_sec['Sectors'].unique(),
-    default=df_sec['Sectors'].unique()
+    default=['Bank']
 )
 
 indices = st.sidebar.multiselect(
     "Select the indices:",
     options=df['Indices'].unique(),
-    default=['Nifty', 'NiftyJr', 'Nifty Midcap 150', 'Nifty Small Cap 250']
+    default=['Nifty']
 )
 
 st.title(":bar_chart: Mutual Fund Dashboard")
@@ -81,15 +81,15 @@ for sec in df_plot['Sector']:
 df_plot['%p_chg'] = aum
 st.dataframe(df_plot[['Sector', '%aum_chg', '%p_chg']])
 
-x = [z for z in df_plot['%aum_chg']]
-y = [z for z in df_plot['%p_chg']]
+#x = [z for z in df_plot['%aum_chg']]
+#y = [z for z in df_plot['%p_chg']]
 
 fig, ax = plt.subplots(figsize=(8, 8))
 csfont = {'fontname':'Comic Sans MS'}
 hfont = {'fontname':'Helvetica'}
 
-# x = [z for z in df_selection['qty_change']]
-# y = [z for z in df_selection['price_change']]
+x = [z for z in df_selection['qty_change']]
+y = [z for z in df_selection['price_change']]
 
 point_colors = []
 col = 0
@@ -100,7 +100,7 @@ for _ in x:
     col = 0
     point_colors.append(colors[col])
   col += 1
-labels = ['Technology' if z == 'IT' else z for z in df_plot['Sector']]
+labels = ['Technology' if z == 'IT' else z for z in df_selection['Sector']]
 
 st.text(f"Selection:")
 st.text(f"Sectors: {", ".join(sectors)}")
@@ -134,15 +134,15 @@ if nif100 == 1:
   ax.axhline(14.3, color='#ff5f13', linestyle='--', linewidth=1)
   ax.text(ax.get_xlim()[1] + 1.5, 13.9, f'Nifty 100', fontweight='bold')
 
-#if nifmid == 1:
-  #ax.axhline(22.4, color='#ff5f13', linestyle='--', linewidth=1)
-  #ax.text(ax.get_xlim()[1] + 1.5, 22.0, f'Nifty Midcap 150')
+if nifmid == 1:
+  ax.axhline(22.4, color='#ff5f13', linestyle='--', linewidth=1)
+  ax.text(ax.get_xlim()[1] + 1.5, 22.0, f'Nifty Midcap 150')
 
 ax.axvline(0, color='black', linestyle='--', linewidth=1)
 ax.axhline(0, color='black', linestyle='--', linewidth=1)
 
 # Customize axes and title
-ax.set_xlabel('AUM Change %', fontweight='bold')
+ax.set_xlabel('Quantity Change %', fontweight='bold')
 ax.set_ylabel('Price Change %', fontweight='bold')
 ax.set_title('Price vs AUM Change %', fontweight='bold')
 # adjust_text(texts, arrowprops=dict(arrowstyle="->", color='black'))
