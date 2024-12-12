@@ -28,15 +28,15 @@ df = pd.read_excel('quad_data-2.xlsx')
 
 st.sidebar.header("Filter:")
 
-#df = df[df['P_Nov-24'] != 0].copy()
+df = df[df['P_Nov-24'] != 0].copy()
 
-#df = df[df['P_Nov-23'] != 0].copy()
+df = df[df['P_Nov-23'] != 0].copy()
 
 df.reset_index(drop=True, inplace=True)
 
-#df['price_change'] = round(((df['P_Nov-24'] - df['P_Nov-23'])/df['P_Nov-23']) * 100)
+df['price_change'] = round(((df['P_Nov-24'] - df['P_Nov-23'])/df['P_Nov-23']) * 100)
 
-#df['qty_change'] = round(((df['S_Nov-24'] - df['S_Nov-23'])/df['S_Nov-23']) * 100)
+df['qty_change'] = round(((df['S_Nov-24'] - df['S_Nov-23'])/df['S_Nov-23']) * 100)
 
 df_sec = pd.read_excel("Sectors.xlsx")
 
