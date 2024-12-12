@@ -48,7 +48,7 @@ stocks = st.sidebar.multiselect(
 
 sectors = st.sidebar.multiselect(
     "Select the sectors:",
-    options=df['Sectors'].unique(),
+    options=df['Sector'].unique(),
     default=['Bank']
 )
 
